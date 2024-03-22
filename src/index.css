@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --gris-uno-color: #1B1D1F;
+  --gris-dos-color: #282B30;
+  --gris-tres: #6C727F;
+  --azul-color: #4E80EE;
+  --blanco: #D2D5DA
+}
+
+body{
+  font-family: "Be Vietnam Pro", sans-serif;
+  background-color: var(--gris-uno-color);  
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30vh;
+  background-color: gray;
+  background-image: url('./assets/hero-image-wr.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-logo{
+ width: 20%;
+}
+
+.main-container{
+  position: absolute;
+  width: 95%;
+  min-height: 70%;
+  right: 2.5%;
+  top: 25%;
+  background-color: var(--gris-uno-color);
+  border: 1px solid var(--gris-dos-color);
+  border-radius: 10px;
+  padding: 30px;
+  margin: auto 0;
+}
+
+/* ARRIBA */
+.search-countries-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-countries-box h1{
+  font-size: 20px;
+  color: var(--gris-tres);
+  font-weight: 600;
+}
+
+.search-countries-box form{
+  min-width: 350px;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #555;
+  background-color: var(--gris-dos-color);
+	border-radius: 20px;
+}
+
+.search-countries-box input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 20px;
+  padding: 0px 20px 0px 5px;
+  background-color: var(--gris-dos-color);
+  color: white;
+  outline: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.search-countries-box button {
+  height: 100%;
+  border-radius: 20px;
+  color: white;
+  background-color: var(--gris-dos-color);
+  border: 0;
+  padding: 10px;
+}
+
+.icon-search {
+	width: 20px;
+	height: 20px;
+	stroke: var(--gris-tres);
+}
+
+.filter-main-box{
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+}
+
+.filter-box{
+  margin-top: 10px;
+  width: 30%;
+  padding: 0px 20px 0px 0px;
+}
+
+.filter-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.filter-box label{
+  color: var(--gris-tres);
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.filter-box label:nth-child(1){
+  margin-top: 0;
+}
+
+.select-container{
+  position: relative;
+}
+
+.select-container select{
+  width: 100%;
+  outline: none;
+  appearance: none;
+  background: var(--gris-uno-color);
+  color: var(--blanco);
+  padding: 13px;
+  border: 2px solid var(--gris-dos-color);
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.arrow-dropdown{
+  position: absolute;
+  display: block;
+  width: 1rem;
+  height: 80%;
+  top: 5px;
+  right: 15px;
+  border: 0;
+  outline: 0;
+  border-radius: 20px;
+  background-color: var(--gris-uno-color);
+  pointer-events: none;
+}
+
+.fa-angle-down{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0.5rem;
+  height: 100%;
+  color: var(--gris-tres);
+  
+}
+
+.container-button{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.first-row, .second-row {
+  display: flex;
+  width: fit-content;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.filter-box button{
+  padding: 10px 15px;
+  background-color: transparent;
+  width: fit-content;
+  border: 1px solid var(--gris-dos-color);
+  color: white;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.filter-box .active{
+  background-color: var(--gris-dos-color);
+  width: fit-content;
+}
+
+.checkbox-container, .checkbox-container label{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+[type="checkbox"]{
+  display: none;
+}
+
+.label-check{
+  padding-left: 40px;
+  position: relative;
+}
+.label-check::before{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: '';
+  border: 2px solid var(--gris-tres);
+  border-radius: 3px;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  left: 0;
+}
+
+[type="checkbox"]:checked + label::before{
+  background-color: var(--azul-color);
+  color: white;
+  content: '\f00c';
+  font-family: FontAwesome;
+}
+
+.show-countries{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0px 0px 0px 20px;
+  color: var(--blanco);
+}
+
+.scrollback{
+  max-height: 800px;
+  overflow-y: auto ;
+  scrollbar-width: thin;
+}
+
+.table-thead th {
+  color: var(--gris-tres);
+  font-size: 14px;
+  text-align: start;
+  padding: 10px 5px 20px 5px;
+}
+
+.table-tbody {
+
+  width: 100%;
+  font-size: 14px;
+}
+
+.hr{
+  background-color: var(--gris-tres);
+  height: 1px;
+  border: none;
+}
+
+.td-flag-img{
+  width: 70px;
+  height: 50px;
+  border-radius: 10px; 
+}
+
+.th-flag, .th-name, .th-population, .th-area, .th-region{
+  width: 20%;  
+}
+
+.td-flag, .td-name, .td-population, .td-area, .td-region{
+  width: 400px;
+  padding: 10px;
+}
+
+@media (width < 1024px){
+  .filter-main-box{
+    width: 100%;
+    padding: 20px 10px 20px 0px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .filter-box{
+    width: 100%;
+  }
+  .container-button{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  
+  .show-countries{
+    display: flex;
+    justify-content: start;
+
+    width: 100%;
+    padding: 0;
+    margin-top: 20px;
+  }
+  .table-countries{
+    text-align: left;
+    margin-left: 0px;
+  }
+  .table-countries td{
+    padding: 20px 30px 20px 0px;
+  }
+}
+
